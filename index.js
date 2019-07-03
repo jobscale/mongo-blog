@@ -92,7 +92,7 @@ if (module.parent) {
   module.exports = app
 } else {
   // 监听端口，启动程序
-  const port = process.env.PORT || config.port;
+  const port = process.env.PORT || config.port
   app.listen(port, function () {
     console.log(`${pkg.name} listening on port ${port}`)
   })

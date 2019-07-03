@@ -5,5 +5,5 @@ module.exports = {
     key: 'myblog',
     maxAge: 2592000000
   },
-  mongodb: 'mongodb://localhost:27017/myblog'
+  mongodb: 'mongodb://172.16.6.22:27017/myblog'
 }

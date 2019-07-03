@@ -4,10 +4,13 @@
   "description": "my first blog",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover _mocha",
-    "start": "cross-env NODE_ENV=production pm2 start index.js --name 'myblog'",
-    "stop": "cross-env NODE_ENV=production pm2 stop myblog",
-    "lint": "eslint --fix config lib middlewares models routes test"
+    "start": "node .",
+    "build": "docker build . -t local/blog:bionic",
+    "docker": "docker run --rm -d --network=host local/blog:bionic",
+    "save": "docker save local/blog:bionic > ../image.tar",
+    "import": "sudo microk8s.ctr -n k8s.io image import ../image.tar",
+    "lint": "eslint index.js config lib middlewares models routes test",
+    "test": "istanbul cover _mocha"
   },
   "author": "nswbmw",
   "license": "MIT",
@@ -28,7 +31,6 @@
     "winston": "2.4.0"
   },
   "devDependencies": {
-    "cross-env": "5.2.0",
     "eslint": "5.5.0",
     "eslint-config-standard": "11.0.0-beta.0",
     "eslint-plugin-import": "2.8.0",
@@ -37,7 +39,6 @@
     "eslint-plugin-standard": "3.0.1",
     "istanbul": "0.4.5",
     "mocha": "4.1.0",
-    "pm2": "3.0.0",
     "supertest": "3.0.0"
   }
 }
