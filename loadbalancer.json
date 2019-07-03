@@ -1,0 +1,40 @@
+{
+    "kind": "Service",
+      "apiVersion": "v1",
+        "metadata": {
+              "name": "blog",
+                  "namespace": "default",
+                      "selfLink": "/api/v1/namespaces/default/services/blog",
+                          "uid": "af37e80e-9de2-11e9-a369-f832e49f1b88",
+                              "resourceVersion": "1777146",
+                                  "creationTimestamp": "2019-07-03T22:34:13Z",
+                                      "labels": {
+                                              "k8s-app": "blog"
+                                                  }
+                                                    },
+                                                      "spec": {
+                                                            "ports": [
+                                                                    {
+                                                                              "name": "tcp-3344-3344-cf25f",
+                                                                                      "protocol": "TCP",
+                                                                                              "port": 3344,
+                                                                                                      "targetPort": 3344,
+                                                                                                              "nodePort": 31925
+                                                                                                                    }
+                                                                                                                        ],
+                                                                                                                            "selector": {
+                                                                                                                                    "k8s-app": "blog"
+                                                                                                                                        },
+                                                                                                                                            "clusterIP": "10.152.183.35",
+                                                                                                                                                "type": "LoadBalancer",
+  "sessionAffinity": "None",
+  "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+  "loadBalancer": {"ingress": [
+          {
+                    "ip": "172.16.6.22"
+                  }
+        ]}
+  }
+}

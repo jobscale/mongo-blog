@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/bin/bash -e
 
 . configure
 export DB_HOST=172.16.6.22
