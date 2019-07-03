@@ -1,5 +1,6 @@
 #!/bin/bash -eu
 
+. configure
 export DB_HOST=172.16.6.22
 export DB_PORT=27017
 
@@ -26,6 +27,5 @@ waiter() {
 }
 waiter
 
-. /home/jobscale/.nvm/nvm.sh
-cd /var/site/projects/node/N-blog
-PORT=3344 npm start
+. .nvm/nvm.sh
+npm start
