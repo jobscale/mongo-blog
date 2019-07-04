@@ -1,3 +1,15 @@
+#### { "license": "MIT" }
+
+```
+git clone https://github.com/jobscale/blog.git
+cd blog
+npm i
+docker build . -t local/blog
+docker run -d --network=host mongo:unstable-bionic
+docker run -d --network=host local/blog
+xdg-open http://127.0.0.1:3344
+```
+
 ## N-blog
 
 使用 Express + MongoDB 搭建多人博客
