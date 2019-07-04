@@ -1,4 +1,0 @@
-#!/bin/bash -e
-
-. inst iNodejs
-apt install -y netcat
