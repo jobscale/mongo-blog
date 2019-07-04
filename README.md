@@ -3,7 +3,6 @@
 ```
 git clone https://github.com/jobscale/blog.git
 cd blog
-npm i
 docker build . -t local/blog
 docker run -d --network=host mongo:unstable-bionic
 docker run -d --network=host local/blog
