@@ -1,13 +1,13 @@
 {
   "name": "myblog",
   "version": "1.0.0",
-  "description": "my first blog",
+  "description": "my blog",
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "build": "docker build . -t local/blog:bionic",
-    "docker": "docker run --rm -d --network=host local/blog:bionic",
-    "save": "docker save local/blog:bionic > ../image.tar",
+    "build": "docker build . -t jobscale/blog:bionic",
+    "docker": "docker run --rm -d --network=host jobscale/blog:bionic",
+    "save": "docker save jobscale/blog:bionic > ../image.tar",
     "import": "sudo microk8s.ctr -n k8s.io image import ../image.tar",
     "lint": "eslint index.js config lib middlewares models routes test",
     "test": "istanbul cover _mocha"

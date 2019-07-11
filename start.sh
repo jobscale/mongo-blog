@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 . configure
 export DB_HOST=mongo
@@ -8,7 +8,7 @@ check() {
   nc $DB_HOST $DB_PORT -w 1 < /dev/null
   if [ $? -eq 0 ]
   then
-    echo -e "\nOK!"
+    echo -e "\nOK!\n"
     return 0
   fi
   return 1
@@ -22,6 +22,7 @@ waiter() {
     then
       break
     fi
+    echo -e "\nWait"
     sleep 60
   done
 }
