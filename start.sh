@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 . configure
-export DB_HOST=172.16.6.22
+export DB_HOST=mongo
 export DB_PORT=27017
 
 check() {
