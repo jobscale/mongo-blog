@@ -5,7 +5,7 @@ const Comment = require('../lib/mongo').Comment
 Comment.plugin('contentToHtml', {
   afterFind: function (comments) {
     return comments.map(function (comment) {
-      comment.content = marked(comment.content)
+      comment.content = marked.parse(comment.content)
       return comment
     })
   }

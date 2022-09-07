@@ -27,13 +27,13 @@ Post.plugin('addCommentsCount', {
 Post.plugin('contentToHtml', {
   afterFind: function (posts) {
     return posts.map(function (post) {
-      post.content = marked(post.content)
+      post.content = marked.parse(post.content)
       return post
     })
   },
   afterFindOne: function (post) {
     if (post) {
-      post.content = marked(post.content)
+      post.content = marked.parse(post.content)
     }
     return post
   }
