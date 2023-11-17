@@ -1,7 +1,7 @@
 #### { "license": "MIT" }
 
 ```
-git clone https://github.com/jobscale/blog.git
+git clone git@github.com:jobscale/blog.git
 cd blog
 docker build . -t local/blog
 docker run -d --network=host mongo:unstable-bionic
